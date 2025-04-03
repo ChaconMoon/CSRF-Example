@@ -1,13 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION['csrf_token'])) {
-        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-                die("Error: Token CSRF inválido.");
-        }
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
         $email = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
 
