@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 }
 ?>
 <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../style.css">
 </head>
 <body>
         <div class="form">
